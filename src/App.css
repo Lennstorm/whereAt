@@ -1,6 +1,34 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Barcode+128&display=swap');
+
+@font-face {
+  font-family: 'SansitaOne';
+  src: url('src/assets/fonts/SansitaOne.ttf') format('truetype'); 
+}
+
+:root {
+  --background-blue: rgb(35, 31, 66);
+  --light-green: #37AEAB;
+  --creamy-pink: rgb(245, 107, 154);
+  --ticket-shadow-one: #E7D1DE;
+  --ticket-shadow-two: #CBA0BA; 
+  --font-sansita: 'SansitaOne', sans-serif;
+  --font-fira-sans: 'Fira Sans', sans-serif;
+  --font-barcode: 'Libre Barcode 128', sans-serif;
+  --gradient-light-top: linear-gradient(180deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
+  --gradient-dark-top: linear-gradient(0deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+
+.novo {
+  font-family: var(--font-sansita);
+  font-size: 5rem;
+  background-color: var(--background-blue);
+  color: var(--light-green);
 }

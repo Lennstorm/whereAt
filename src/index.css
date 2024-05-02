@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Libre+Barcode+128&display=swap');
+
+@font-face {
+  font-family: 'SansitaOne';
+  src: url('src/assets/fonts/SansitaOne.ttf') format('truetype'); 
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
- }
+  --color-background-blue: #231f42;
+  --color-light-green: #37AEAB;
+  --color-creamy-pink: #f56b9a;
+  --color-ticket-shadow-one: #E7D1DE;
+  --color-ticket-shadow-two: #CBA0BA; 
+  --color-font-white: #FFFFFF;
+  --font-sansita: 'SansitaOne', sans-serif;
+  --font-fira-sans: 'Fira Sans', sans-serif;
+  --font-barcode: 'Libre Barcode 128', sans-serif;
+  --gradient-light-top: linear-gradient(180deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
+  --gradient-dark-top: linear-gradient(0deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
+}
+

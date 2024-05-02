@@ -1,0 +1,47 @@
+:root {
+    --color-background-blue: #231f42;
+    --color-light-green: #37AEAB;
+    --color-creamy-pink: #f56b9a;
+    --color-ticket-shadow-one: #E7D1DE;
+    --color-ticket-shadow-two: #CBA0BA; 
+    --color-font-white: #FFFFFF;
+    --font-sansita: 'SansitaOne', sans-serif;
+    --font-fira-sans: 'Fira Sans', sans-serif;
+    --font-barcode: 'Libre Barcode 128', sans-serif;
+    --gradient-light-top: linear-gradient(180deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
+    --gradient-dark-top: linear-gradient(0deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
+  }
+
+.home {
+    width: 375px;
+    height: 667px;
+    background-color: var(--color-background-blue);    
+    /* padding: 8rem 3rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
+
+.footer {
+    width: 375px;
+
+}
+
+.title {
+    font-family: var(--font-sansita);
+    font-size: 2rem;
+    color: var(--creamy-pink);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    margin: 1rem 0;
+}
+
+.underTitle {
+    font-family: var(--font-fira-sans);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.375rem;
+    color: var(--color-font-white);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+
+}

@@ -1,4 +1,3 @@
-import React from 'react'
 import './orderPage.css'
 
 function OrderPage() {
