@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Route, Routes } from "react-router-dom"
-import HomePage from './pages/homePage/HomePage'
-import OrderPage from './pages/orderPage/OrderPage'
-import EventsPage from './pages/eventsPage/EventsPage'
-import CartPage from './pages/cartPage/CartPage'
+import { Route, Routes } from "react-router-dom";
+import HomePage from './pages/homePage/HomePage';
+import CartPage from './pages/cartPage/CartPage';
 import TicketPage from './pages/ticketPage/TicketPage'
+import EventPage from './pages/eventPage/EventPage';
+import EventsList from './pages/eventsList/EventsList';
 
 
 function App() {
@@ -20,22 +20,20 @@ function App() {
           <Route path="/" element={
             <HomePage />
           } />
-          <Route path="/order/" element={
-            <OrderPage />
+
+          <Route path="/eventslist/" element={
+            <EventsList />
           } />
 
-
-          <Route path="/events/" element={
-            <EventsPage />
+          <Route path="/singleevent/" element={
+            <EventPage />
           } />
 
           <Route path="/cart/" element={
-
             <CartPage />
           } />
 
           <Route path="/tickets/" element={
-
             <TicketPage />
           } />
 

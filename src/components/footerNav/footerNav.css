@@ -1,5 +1,13 @@
-.foot__Nav {
-    background-color: var(--creamy-pink);;
+:root {
+    --color-background-blue: #231F42;
+    --color-light-green: #37AEAB;
+    --color-creamy-pink: #f56B9A;
+    --color-ticket-shadow-one: #E7D1DE;
+    --color-ticket-shadow-two: #CBA0BA; 
+    --color-font-white: #FFFFFF;
+    --font-sansita: 'SansitaOne', sans-serif;
+    --font-fira-sans: 'Fira Sans', sans-serif;
+    --font-barcode: 'Libre Barcode 128', sans-serif;
 }
 
 .nav__List {
@@ -17,10 +25,3 @@
     font-size: 2rem;
 }
 
-a {
-    color: var(--color-font-white);
-    font-family: var(--font-fira-sans);
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-  

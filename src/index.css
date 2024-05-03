@@ -6,16 +6,38 @@
 }
 
 :root {
-  --color-background-blue: #231f42;
+  --color-background-blue: #231F42;
   --color-light-green: #37AEAB;
-  --color-creamy-pink: #f56b9a;
+  --color-creamy-pink: #f56B9A;
   --color-ticket-shadow-one: #E7D1DE;
   --color-ticket-shadow-two: #CBA0BA; 
   --color-font-white: #FFFFFF;
   --font-sansita: 'SansitaOne', sans-serif;
   --font-fira-sans: 'Fira Sans', sans-serif;
   --font-barcode: 'Libre Barcode 128', sans-serif;
-  --gradient-light-top: linear-gradient(180deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
-  --gradient-dark-top: linear-gradient(0deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
 }
 
+.footLink {
+    color: var(--color-font-white);
+    font-family: var(--font-fira-sans);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.footer {
+  background-color: var(--color-creamy-pink);
+  position: absolute;
+  bottom: 0;
+  z-index: 1000;
+  /* flex-grow: 0; */
+  width: 100%;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+  /* flex-grow: 0; */
+  width: 100%;
+
+}

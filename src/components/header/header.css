@@ -1,0 +1,23 @@
+:root {
+    --color-background-blue: #231F42;
+    --color-light-green: #37AEAB;
+    --color-creamy-pink: #f56B9A;
+    --color-ticket-shadow-one: #E7D1DE;
+    --color-ticket-shadow-two: #CBA0BA; 
+    --color-font-white: #FFFFFF;
+    --font-sansita: 'SansitaOne', sans-serif;
+    --font-fira-sans: 'Fira Sans', sans-serif;
+    --font-barcode: 'Libre Barcode 128', sans-serif;
+}
+
+.header {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-creamy-pink);
+    font-family: var(--font-sansita);
+    font-size: 2rem;
+    
+}

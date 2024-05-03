@@ -3,22 +3,22 @@ import { Link } from 'react-router-dom';
 
 function FooterNav() {
   return (
-    <div className="foot__Nav">
+    <div className="footer">
       <ul className="nav__List">
         <li>
-          <Link to="/">
+          <Link className='footLink' to="/">
             Home
           </Link>
         </li>
 
         <li>
-          <Link to="events">
+          <Link className='footLink' to="/eventslist">
             Events
           </Link>
         </li>
 
         <li>
-          <Link to="tickets">
+          <Link className='footLink' to="/tickets">
             Tickets
           </Link>
         </li>        

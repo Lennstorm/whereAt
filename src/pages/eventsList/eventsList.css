@@ -1,23 +1,29 @@
 :root {
-    --color-background-blue: #231F42;
+    --color-background-blue: #231f42;
     --color-light-green: #37AEAB;
-    --color-creamy-pink: #f56B9A;
+    --color-creamy-pink: #f56b9a;
     --color-ticket-shadow-one: #E7D1DE;
-    --color-ticket-shadow-two: #CBA0BA; 
+    --color-ticket-shadow-two: #CBA0BA;
     --color-font-white: #FFFFFF;
     --font-sansita: 'SansitaOne', sans-serif;
     --font-fira-sans: 'Fira Sans', sans-serif;
     --font-barcode: 'Libre Barcode 128', sans-serif;
+    --gradient-light-top: linear-gradient(180deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
+    --gradient-dark-top: linear-gradient(0deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
 }
 
-.tickets__Page {
+.eventsList__Page {
     position: relative;
     width: 375px;
     height: 667px;
-    background: linear-gradient(180deg, rgba(244, 107, 154, 1) 0%, rgba(35, 31, 66, 1) 40%);
+    background-color: var(--color-background-blue);
     /* padding: 8rem 3rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.events__all {
+    color: var(--color-font-white);
 }
