@@ -1,15 +1,13 @@
 :root {
-    --color-background-blue: #231f42;
+    --color-background-blue: #231F42;
     --color-light-green: #37AEAB;
-    --color-creamy-pink: #f56b9a;
+    --color-creamy-pink: #f56B9A;
     --color-ticket-shadow-one: #E7D1DE;
-    --color-ticket-shadow-two: #CBA0BA;
+    --color-ticket-shadow-two: #CBA0BA; 
     --color-font-white: #FFFFFF;
     --font-sansita: 'SansitaOne', sans-serif;
     --font-fira-sans: 'Fira Sans', sans-serif;
     --font-barcode: 'Libre Barcode 128', sans-serif;
-    --gradient-light-top: linear-gradient(180deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
-    --gradient-dark-top: linear-gradient(0deg, rgba(245, 107, 154, 1) 0%, rgba(35, 31, 66, 0.9) 100%);
 }
 
 .eventsList__Page {
