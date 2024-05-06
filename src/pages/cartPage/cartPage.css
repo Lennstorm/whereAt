@@ -1,0 +1,11 @@
+.cartpage__wrapper {
+    position: relative;
+    width: 375px;
+    height: 667px;
+    background-color: var(--color-background-blue);    
+    /* padding: 8rem 3rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+}
