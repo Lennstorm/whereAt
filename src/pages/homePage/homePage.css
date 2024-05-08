@@ -11,15 +11,17 @@
   }
 
 .home {
-    position: relative;
-    width: 375px;
-    height: 667px;
+    /* position: relative; */
+    /* width: 375px;
+    height: 667px; */
+    height: 100%;
     background-color: var(--color-background-blue);    
     /* padding: 8rem 3rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;  
+    padding-top: 9rem;  
 }
 
 .title {
@@ -38,4 +40,13 @@
     color: var(--color-font-white);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 
+}
+
+.home__logo {
+    margin-top: 6rem;
+    
+}
+
+.footer {
+    margin-top: auto;
 }

@@ -12,8 +12,9 @@
 
 .tickets__Page {
     position: relative;
-    width: 375px;
-    height: 667px;
+    /* width: 375px;
+    height: 667px; */
+    height: 100%;
     background: linear-gradient(180deg, rgba(244, 107, 154, 1) 0%, rgba(35, 31, 66, 1) 40%);
     /* padding: 8rem 3rem; */
     display: flex;

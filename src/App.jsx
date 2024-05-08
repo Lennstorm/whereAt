@@ -25,9 +25,8 @@ function App() {
             <EventsList />
           } />
 
-          <Route path="/singleevent/" element={
-            <EventPage />
-          } />
+          <Route path="/singleevent/:eventId" element={
+            <EventPage event={event} />} />
 
           <Route path="/cart/" element={
             <CartPage />

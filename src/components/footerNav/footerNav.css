@@ -3,7 +3,7 @@
     --color-light-green: #37AEAB;
     --color-creamy-pink: #f56B9A;
     --color-ticket-shadow-one: #E7D1DE;
-    --color-ticket-shadow-two: #CBA0BA; 
+    --color-ticket-shadow-two: #CBA0BA;
     --color-font-white: #FFFFFF;
     --font-sansita: 'SansitaOne', sans-serif;
     --font-fira-sans: 'Fira Sans', sans-serif;
@@ -20,8 +20,25 @@
 }
 
 .nav__List li {
-    min-height: 4rem;    
+    min-height: 4rem;
     padding: 1rem 0;
     font-size: 2rem;
 }
 
+.footLink {
+    color: var(--color-font-white);
+    font-family: var(--font-fira-sans);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.footer {
+    /* margin-top: auto; */
+    background-color: var(--color-creamy-pink);
+    position: sticky;
+    bottom: 0;
+
+    z-index: 1000;
+    /* flex-grow: 0; */
+    width: 100%;
+}

@@ -1,7 +1,21 @@
+:root {
+    --color-background-blue: #231F42;
+    --color-light-green: #37AEAB;
+    --color-creamy-pink: #f56B9A;
+    --color-ticket-shadow-one: #E7D1DE;
+    --color-ticket-shadow-two: #CBA0BA;
+    --color-time: #D0D0D0; 
+    --color-font-white: #FFFFFF;
+    --font-sansita: 'SansitaOne', sans-serif;
+    --font-fira-sans: 'Fira Sans', sans-serif;
+    --font-barcode: 'Libre Barcode 128', sans-serif;
+}
+
 .eventpage__wrapper {
     position: relative;
-    width: 375px;
-    height: 667px;
+    /* width: 375px;
+    height: 667px; */
+    height: 100%;
     background-color: var(--color-background-blue);    
     /* padding: 8rem 3rem; */
     display: flex;
@@ -9,3 +23,44 @@
     align-items: center;
     justify-content: center;    
 }
+
+.event__Page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-font-white);
+}
+
+h2 {    
+    font-family: var(--font-fira-sans);
+    font-weight: 300;
+    font-size: 1.3rem;
+    max-width: 60%;    
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.event__total {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr 1fr;
+    gap: 1px;
+  }
+  
+  .event__total > * {
+    /* background-color: lightgray; */
+    padding: 20px;
+    border: 1px solid darkgray;
+  }
+  
+  /* Modifiera storlek för specifika rutor */
+  .event__total > *:nth-child(1) {
+    grid-column: span 3; /* Den här rutan ska täcka alla tre kolumnerna */
+  }
+  
+  .event__total > *:nth-child(n+4) {
+    grid-column: span 1; /* De tre rutorna i rad två ska vara en kolumn breda var */
+  }
+  
