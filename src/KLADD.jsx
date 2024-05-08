@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import { fetchEvents } from '../../script/api';
 import { useParams } from 'react-router-dom';
-import useStore from '../../script/store';
-import Header from '../../components/header/Header';
+import useStore from '../../path/to/store'; // Importera din Zustand 
 import Button from '../../components/button/Button';
 import FooterNav from '../../components/footerNav/FooterNav';
+import Header from '../../components/header/Header';
 import './eventPage.css';
 
 function EventPage() {
@@ -16,7 +16,8 @@ function EventPage() {
   }, []);
 
   const [event, setEvent] = useState(null);
-  const ticketQuantity = useStore(state => state.ticketCounts[eventId] || 0);
+  const ticketQuantity = useStore(state => state.ticketCounts[eventId] || 0); // Läs biljettantalet från Zustand
+
 
   const fetchData = async () => {
     try {
@@ -30,17 +31,21 @@ function EventPage() {
     }
   };
 
-  const decreaseTicket = () => useStore.getState().decreaseTicketQuantity(eventId, ticketQuantity);
-  const increaseTicket = () => useStore.getState().increaseTicketQuantity(eventId, ticketQuantity);
-  const totalPrice = useStore.getState().calculateTotalPrice(event, ticketQuantity);
+  const decreaseTicketQuantity = () => {
+    if (ticketQuantity > 0) {
+      useStore.getState().addToCart(eventId, ticketQuantity - 1); // Uppdatera biljettantalet med Zustand
+    }
+  };
+
+  const increaseTicketQuantity = () => {
+    useStore.getState().addToCart(eventId, ticketQuantity + 1); // Uppdatera biljettantalet med Zustand
+  }
+
+  const totalPrice = event ? event.price * ticketQuantity : 0;
 
   if (!event) {
     return <div>Loading...</div>;
   }
-
-  const handleBtnClick = () => {
-    console.log('Till Varukorgen')
-  };
 
   return (
     <div className='eventpage__wrapper'>
@@ -57,16 +62,16 @@ function EventPage() {
 
           <article className='event__total'>
             <div className='event__totalPrice'>{totalPrice}</div>
-            <div className='event__ticketDecrease' onClick={decreaseTicket}> <img src="../../../src/assets/minus.svg" alt="Decrease ticket quantity" /></div>
+            <div className='event__ticketDecrease' onClick={decreaseTicketQuantity}> <img src="../../../src/assets/minus.svg" alt="Decrease ticket quantity" /></div>
             <div className='event__ticketQuantity'>{ticketQuantity}</div>
-            <div className='event__ticketIncrease' onClick={increaseTicket}> <img src="../../../src/assets/plus.svg" alt="increase ticket quantity" /></div>
+            <div className='event__ticketIncrease' onClick={increaseTicketQuantity}> <img src="../../../src/assets/plus.svg" alt="increase ticket quantity" /></div>
           </article>
-          <Button text="Till varukorgen" onClick={handleBtnClick} />
         </section>
+
       </section>
       <FooterNav />
     </div>
   )
 }
 
-export default EventPage;
+// export default EventPage;

@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
-import { fetchEvents } from '../../api/api';
+import { fetchEvents } from '../../script/api';
 import { Link } from 'react-router-dom';
 import lookingGlass from '../../assets/lookingGlass.svg';
 import FooterNav from '../../components/footerNav/FooterNav';
 import Header from '../../components/header/Header';
 import './eventsList.css'
+import Button from '../../components/button/Button';
 
 function EventsList() {
   useEffect(() => {
@@ -26,6 +27,10 @@ function EventsList() {
 
   const handleSearchClick = () => {
     console.log('sökning');
+  };
+
+  const handleBtnClick = () => {
+    console.log('Till Varukorgen')
   };
 
   return (
@@ -61,6 +66,7 @@ function EventsList() {
         })}
 
       </section>
+      <Button text="Till varukorgen" onClick={handleBtnClick}/>
 
       <FooterNav />
 

@@ -17,12 +17,6 @@
   --font-barcode: 'Libre Barcode 128', sans-serif;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
 .app {
   width: 375px;
   height: 667px;
