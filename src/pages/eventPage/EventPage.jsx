@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchEvents } from '../../script/api';
-import { useParams } from 'react-router-dom';
+import { useParams, } from 'react-router-dom';
 import useStore from '../../script/store';
 import Header from '../../components/header/Header';
 import Button from '../../components/button/Button';
@@ -39,14 +39,14 @@ function EventPage() {
   }
 
   const handleBtnClick = () => {
-    console.log('Till Varukorgen')
+    console.log('Till Varukorgen');
   };
 
   return (
     <div className='eventpage__wrapper'>
       <Header title="Event" />
       <section className='event__Page'>
-        <h2>You are about to score some tickets to</h2>
+        <h2 className='eventPage__headline'>You are about to score some tickets to</h2>
 
         <section className='eventpage__event'>
           <article key={event.id} className='eventPage__card'>
@@ -61,8 +61,8 @@ function EventPage() {
             <div className='event__ticketQuantity'>{ticketQuantity}</div>
             <div className='event__ticketIncrease' onClick={increaseTicket}> <img src="../../../src/assets/plus.svg" alt="increase ticket quantity" /></div>
           </article>
-          <Button text="Till varukorgen" onClick={handleBtnClick} />
         </section>
+          <Button to="/cart" text="Till varukorgen" />
       </section>
       <FooterNav />
     </div>

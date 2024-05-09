@@ -10,7 +10,7 @@ const handleBtnClick = () => {
   console.log('Skicka order!')
 };
 
-function CartPage() {
+function CartPage( eventId ) {
   useEffect(() => {
     document.title = 'Varukorg';
   }, []);
@@ -18,8 +18,8 @@ function CartPage() {
   return (
     <div className='cartpage__wrapper'>
       <Header title="Order" />
-      <section>
-        <CartObject />
+      <section className='cartPage__objects'>
+        <CartObject eventId={eventId}/>
         <CartSum />
       <Button text="Skicka order" onClick={handleBtnClick}/>
       </section>

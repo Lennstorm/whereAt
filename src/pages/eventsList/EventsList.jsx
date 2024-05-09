@@ -31,6 +31,7 @@ function EventsList() {
 
   const handleBtnClick = () => {
     console.log('Till Varukorgen')
+    
   };
 
   return (

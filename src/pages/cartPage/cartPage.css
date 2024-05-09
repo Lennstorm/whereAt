@@ -1,7 +1,8 @@
 .cartpage__wrapper {
-    position: relative;
-    /* width: 375px;
-    height: 667px; */
+    position: absolute;
+    top: 0;
+    width: 375px;
+    height: 667px;
     height: 100%;
     background-color: var(--color-background-blue);    
     /* padding: 8rem 3rem; */
@@ -9,4 +10,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;    
+}
+
+.cartPage__objects {
+    width: 85%;
 }

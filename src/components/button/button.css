@@ -12,8 +12,8 @@
   }
 
 .greenBtn {
-    min-width: 50%;
-    min-height: 20%;
+    max-width: 50%;
+    max-height: 30%;
     background-color: var(--color-light-green);
     color: var(--color-font-white);
     

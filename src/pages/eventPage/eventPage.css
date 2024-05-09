@@ -32,7 +32,7 @@
     color: var(--color-font-white);
 }
 
-h2 {    
+.eventPage__headline {    
     font-family: var(--font-fira-sans);
     font-weight: 300;
     font-size: 1.3rem;
@@ -50,17 +50,17 @@ h2 {
   }
   
   .event__total > * {
-    /* background-color: lightgray; */
-    padding: 20px;
+        padding: 20px;
     border: 1px solid darkgray;
   }
   
-  /* Modifiera storlek för specifika rutor */
   .event__total > *:nth-child(1) {
-    grid-column: span 3; /* Den här rutan ska täcka alla tre kolumnerna */
+    grid-column: span 3;
   }
   
   .event__total > *:nth-child(n+4) {
-    grid-column: span 1; /* De tre rutorna i rad två ska vara en kolumn breda var */
+    grid-column: span 1; 
   }
+  
+
   
