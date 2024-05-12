@@ -1,0 +1,114 @@
+.ticket__wrapper {
+    position: relative;
+    min-width: 90%;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;        
+}
+
+.ticket__wrapper::-webkit-scrollbar{
+display: none;
+}
+
+
+
+.ticket__card {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 5;
+    background-color: var(--color-font-white);
+    font-family: var(--font-fira-sans);
+    margin-top: 2rem;
+}
+
+.ticket__card * {
+    padding-top: .4rem;
+    padding-bottom: .4rem;
+    padding-left: .6rem;
+    padding-right: .6rem;
+}
+
+.ticket__header {
+    font-size: .625rem;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.ticket__what {
+    grid-column: span 3;
+    grid-row: 1;
+}
+
+.ticket__event-name{
+    font-size: 1.625rem;
+    font-family: var(--font-sansita);
+    color: var(--color-creamy-pink);
+}
+
+.ticket__where {
+    grid-column: span 3;
+    grid-row: 2;
+    background-color: var(--color-ticket-white-one);    
+}
+
+.ticket__event-where{
+    color: rgba(0, 0, 0, 0.7);    
+}
+
+.ticket__when {
+    grid-row: 3;
+    background-color: var(--color-ticket-white-two);
+    
+}
+
+.ticket__from {
+    grid-row: 3;
+    background-color: var(--color-ticket-white-two);
+    
+}
+
+.ticket__to {
+    grid-row: 3;
+    background-color: var(--color-ticket-white-two);
+    
+}
+
+.ticket__event-date, .ticket__event-from, .ticket__event-to {    
+    color: rgba(0, 0, 0, 0.7);
+    
+}
+
+
+.ticket__info {
+    color: rgba(0, 0, 0, 0.7);
+    grid-column: span 3;
+    grid-row: 4;
+    background-color: var(--color-ticket-white-three);
+    
+}
+
+.ticket__info-seat {
+    color: rgba(0, 0, 0, 0.6);
+    
+}
+
+.ticket__id-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 3;
+    grid-row: 5;
+    background-color: var(--color-ticket-white-four);
+    
+}
+
+.ticket__id-code {
+    font-family: var(--font-barcode);
+    font-size: 6rem;
+}
+
+.ticket__id-text {
+    color: rgba(0, 0, 0, 0.4);
+    font-size: .75rem;
+    font-weight: 700;
+
+}

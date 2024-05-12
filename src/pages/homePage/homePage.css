@@ -1,0 +1,36 @@
+.home {
+    height: 100%;
+    background-color: var(--color-background-blue);    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    padding-top: 9rem;  
+}
+
+.title {
+    font-family: var(--font-sansita);
+    font-size: 2rem;
+    color: var(--color-creamy-pink);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    margin: 1rem 0;
+}
+
+.underTitle {
+    font-family: var(--font-fira-sans);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.375rem;
+    color: var(--color-font-white);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+
+}
+
+.home__logo {
+    margin-top: 6rem;
+    
+}
+
+.footer {
+    margin-top: auto;
+}

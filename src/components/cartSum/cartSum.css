@@ -1,0 +1,24 @@
+.cartSum__total {
+    font-family: var(--font-fira-sans);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartSum__text {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 200;
+    margin-top: 2rem;
+    
+}
+
+.cartSum__sum {
+    font-size: 2rem;
+    color: var(--color-font-white);
+    text-shadow: 1px 1px 1px rgb(245, 107, 154);
+    margin-top: 1rem;
+    
+
+}

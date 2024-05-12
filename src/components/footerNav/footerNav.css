@@ -1,0 +1,29 @@
+.nav__List {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--color-font-white);
+    padding: 0 2rem;
+}
+
+.nav__List li {
+    min-height: 4rem;
+    padding: 1rem 0;
+    font-size: 2rem;
+}
+
+.footLink {
+    color: var(--color-font-white);
+    font-family: var(--font-fira-sans);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.footer {
+    background-color: var(--color-creamy-pink);
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    width: 100%;
+}

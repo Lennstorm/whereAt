@@ -1,0 +1,13 @@
+.header {
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-creamy-pink);
+    font-family: var(--font-sansita);
+    font-size: 1rem;
+    top: 0;
+    width: 100%;
+    padding: 1rem;
+}

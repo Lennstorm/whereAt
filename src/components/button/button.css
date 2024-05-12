@@ -1,0 +1,11 @@
+.greenBtn {
+  margin-top: 2rem;
+  padding: 1rem 5rem;  
+  border-radius: 3px;
+  background-color: var(--color-light-green);
+  color: var(--color-font-white);
+  font-family: var(--font-fira-sans);
+  font-size: 1.375rem;
+  text-decoration: none;
+
+}
