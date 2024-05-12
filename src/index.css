@@ -6,8 +6,6 @@
 }
 
 :root {
-  width: 375px;
-  height: 667px;
   --color-background-blue: #231F42;
   --color-light-green: #37AEAB;
   --color-creamy-pink: #f56B9A;
@@ -18,15 +16,9 @@
   --font-sansita: 'SansitaOne', sans-serif;
   --font-fira-sans: 'Fira Sans', sans-serif;
   --font-barcode: 'Libre Barcode 128', sans-serif;
+  --color-ticket-white-one: #F7F7F7;
+  --color-ticket-white-two: #F0F0F0;
+  --color-ticket-white-three: #E8E8E8;
+  --color-ticket-white-four: #E0E0E0;
 }
 
-
-
-
-/* .header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-} */
-  /* z-index: 1000; */
-  /* flex-grow: 0; */

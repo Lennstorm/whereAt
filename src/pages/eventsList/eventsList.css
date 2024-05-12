@@ -1,24 +1,8 @@
-:root {
-    --color-background-blue: #231F42;
-    --color-light-green: #37AEAB;
-    --color-creamy-pink: #f56B9A;
-    --color-ticket-shadow-one: #E7D1DE;
-    --color-ticket-shadow-two: #CBA0BA;
-    --color-time: #D0D0D0; 
-    --color-font-white: #FFFFFF;
-    --font-sansita: 'SansitaOne', sans-serif;
-    --font-fira-sans: 'Fira Sans', sans-serif;
-    --font-barcode: 'Libre Barcode 128', sans-serif;
-  }
-
 .eventsList__Page {
     position: relative;
     top: 0;
-    /* width: 375px;
-    max-height: 667px; */
     height: 100%;
     background-color: var(--color-background-blue);
-    /* padding: 8rem 3rem ; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,9 +25,6 @@
     padding-left: .5rem;
     padding-right: .5rem;
     margin: 2rem 3rem 1rem 3rem;
-    /* margin-right: 1rem; */
-    /* margin-bottom: 1rem; */
-    /* margin-left: 1rem; */
 }
 
 .events__searchbar img:hover {
@@ -70,10 +51,6 @@
 
 .event__card {
     width: 100%;
-    /* display: flex;
-    flex-direction: row;
-    align-items: end;
-    justify-content: space-between; */
     margin: 1rem 0;
     padding: 3px;
     font-family: var(--font-fira-sans);
@@ -150,6 +127,5 @@
     position:sticky;
     bottom: 0;
     z-index: 1000;
-    /* flex-grow: 0; */
     width: 100%;
   }

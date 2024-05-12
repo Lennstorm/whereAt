@@ -1,22 +1,6 @@
-:root {
-    --color-background-blue: #231F42;
-    --color-light-green: #37AEAB;
-    --color-creamy-pink: #f56B9A;
-    --color-ticket-shadow-one: #E7D1DE;
-    --color-ticket-shadow-two: #CBA0BA; 
-    --color-font-white: #FFFFFF;
-    --font-sansita: 'SansitaOne', sans-serif;
-    --font-fira-sans: 'Fira Sans', sans-serif;
-    --font-barcode: 'Libre Barcode 128', sans-serif;
-  }
-
 .home {
-    /* position: relative; */
-    /* width: 375px;
-    height: 667px; */
     height: 100%;
     background-color: var(--color-background-blue);    
-    /* padding: 8rem 3rem; */
     display: flex;
     flex-direction: column;
     align-items: center;

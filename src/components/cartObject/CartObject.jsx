@@ -1,58 +1,57 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 import { fetchEvents } from '../../script/api';
 import useStore from '../../script/store';
-import '../cartObject/cartObject.css'
+import '../cartObject/cartObject.css';
 
-function CartObject({ eventId }) {
-  const [events, setEvents] = useState([]);
-  // const ticketCounts = useStore(state => state.ticketCounts);  
-  const ticketQuantity = useStore(state => state.ticketCounts[eventId] || 0);
-  
-  const decreaseTicket = (eventId) => { 
-    useStore.getState().decreaseTicketQuantity(eventId, ticketQuantity) };
-  const increaseTicket = (eventId) => { 
-    useStore.getState().increaseTicketQuantity(eventId, ticketQuantity)};
+function CartObject({ events: propsEvents }) { 
+  const [events, setEvents] = useState([]);  
+  const { decreaseTicketQuantity, increaseTicketQuantity } = useStore(); // Hämta funktioner från store  
+  const ticketCounts = useStore(state => state.ticketCounts);
 
   useEffect(() => {
     const getEventData = async () => {
       try {
-        const eventsData = await fetchEvents();
-        console.log(eventsData);
+        const eventsData = await fetchEvents();        
         setEvents(eventsData.events);
       } catch (error) {
         console.error('Errorr fetchning event data', error);        
       }
     };
-              // const foundEvent = eventsData.events.find(event => event.id === eventId);
-        // setEvent(foundEvent);
-        // console.log(eventId)
-        // console.log(eventsData.events)
             
     getEventData();
   }, []);
-    
-  if (events.length === 0) {
-    return <div>CartObject funkar inte!</div>;
-  }
 
-  return (
+  const decreaseTicket = (eventId) => { 
+    decreaseTicketQuantity(eventId, ticketCounts[eventId] || 0);
+  }; 
+  
+  const increaseTicket = (eventId) => { 
+    increaseTicketQuantity(eventId, ticketCounts[eventId] || 0);
+  }; 
+
+  const filteredEvents = events.filter(event => ticketCounts[event.id] !== undefined && ticketCounts[event.id] > 0);
+
+  if (filteredEvents.length === 0) {
+    return <div className='cartObject__errMsg'>Inga biljetter tillagda än!</div>;
+  } 
     
-<div className='cart__card-wrapper'>
-    {events.map(event => (
-      <div key={event.id} className='cartCard'>
-      <section className='cartCard__nameDateTime'>
-        <h2 className='cartCard__name'>{event.name}</h2>
-        <div className='cartCard__dateTime'>{`${event.when.date} kl ${event.when.from} - ${event.when.to}`}  </div>
-      </section>
-      <section className='cartCard__ticketCount'>        
-        <div className='cartCard__ticketDecrease' onClick={decreaseTicket}> <img src="../../../src/assets/minus_small.svg" alt="Decrease ticket quantity" /></div>        
-        <div className='cartCard__ticketQuantity'>{ticketQuantity}</div>
-        <div className='cartCard__ticketIncrease' onClick={increaseTicket}> <img src="../../../src/assets/plus_small.svg" alt="increase ticket quantity" /></div>
-      </section>
+  return (
+    <div className='cart__card-wrapper'>
+      {filteredEvents.map(event => (
+        <div key={event.id} className='cartCard'>
+          <section className='cartCard__nameDateTime'>
+            <h2 className='cartCard__name'>{event.name}</h2>
+            <div className='cartCard__dateTime'>{`${event.when.date} kl ${event.when.from} - ${event.when.to}`}</div>
+          </section>
+          <section className='cartCard__ticketCount'>        
+            <div className='cartCard__ticketDecrease' onClick={() => decreaseTicket(event.id)}> <img src="../../../src/assets/minus_small.svg" alt="Decrease ticket quantity" /></div>        
+            <div className='cartCard__ticketQuantity'>{ticketCounts[event.id]}</div>
+            <div className='cartCard__ticketIncrease' onClick={() => increaseTicket(event.id)}> <img src="../../../src/assets/plus_small.svg" alt="increase ticket quantity" /></div>
+          </section>
+        </div>
+      ))}
     </div>
-    ))}
-</div>
   );
 }
 
-export default CartObject
+export default CartObject;

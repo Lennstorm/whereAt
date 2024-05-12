@@ -29,11 +29,6 @@ function EventsList() {
     console.log('sökning');
   };
 
-  const handleBtnClick = () => {
-    console.log('Till Varukorgen')
-    
-  };
-
   return (
     <div className='eventsList__Page'>
 
@@ -67,7 +62,7 @@ function EventsList() {
         })}
 
       </section>
-      <Button text="Till varukorgen" onClick={handleBtnClick}/>
+      <Button to="/cart" text="Till varukorgen" />
 
       <FooterNav />
 

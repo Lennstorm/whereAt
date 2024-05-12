@@ -1,77 +1,58 @@
-import { useState, useEffect } from 'react';
-import { fetchEvents } from '../../script/api';
-import { useParams } from 'react-router-dom';
-import useStore from '../../path/to/store'; // Importera din Zustand 
-import Button from '../../components/button/Button';
-import FooterNav from '../../components/footerNav/FooterNav';
-import Header from '../../components/header/Header';
-import './eventPage.css';
+// import { useEffect, useState } from 'react'
+// import { fetchEvents } from '../../script/api';
+// import useStore from '../../script/store';
+// import '../cartObject/cartObject.css'
 
-function EventPage() {
-  const { eventId } = useParams();
+// function CartObject({ events }) { // Ta emot events som en prop
+//   const [events, setEvents] = useState([]);  
+//   const { decreaseTicketQuantity, increaseTicketQuantity } = useStore(); // Hämta funktionerna för att minska och öka biljettantalet från store  
+//   const ticketCounts = useStore(state => state.ticketCounts);
 
-  useEffect(() => {
-    document.title = 'Boka';
-    fetchData();
-  }, []);
+//   useEffect(() => {
+//     const getEventData = async () => {
+//       try {
+//         const eventsData = await fetchEvents();        
+//         setEvents(eventsData.events);
+//       } catch (error) {
+//         console.error('Errorr fetchning event data', error);        
+//       }
+//     };
+            
+//     getEventData();
+//   }, []);
 
-  const [event, setEvent] = useState(null);
-  const ticketQuantity = useStore(state => state.ticketCounts[eventId] || 0); // Läs biljettantalet från Zustand
+//   const decreaseTicket = (eventId) => { 
+//     decreaseTicketQuantity(eventId, ticketCounts[eventId] || 0);
+//   }; 
+  
+//   const increaseTicket = (eventId) => { 
+//     increaseTicketQuantity(eventId, ticketCounts[eventId] || 0);
+//   }; 
 
+//   // Filtrera evenemang där biljettantalet är större än noll
+//   const filteredEvents = events.filter(event => ticketCounts[event.id] !== undefined && ticketCounts[event.id] > 0);
 
-  const fetchData = async () => {
-    try {
-      const eventsData = await fetchEvents();
-      const foundEvent = eventsData.events.find(event => event.id === eventId);
-      setEvent(foundEvent);
-      console.log(foundEvent);
-      console.log(event);
-    } catch (error) {
-      console.error('error fetching events:', error)
-    }
-  };
+//   if (filteredEvents.length === 0) {
+//     return <div className='cartObject__errMsg'>Inga biljetter tillagda än!</div>
+//   } 
+    
+//   return (
+//     <div className='cart__card-wrapper'>
+//       {filteredEvents.map(event => (
+//         <div key={event.id} className='cartCard'>
+//           <section className='cartCard__nameDateTime'>
+//             <h2 className='cartCard__name'>{event.name}</h2>
+//             <div className='cartCard__dateTime'>{`${event.when.date} kl ${event.when.from} - ${event.when.to}`}</div>
+//           </section>
+//           <section className='cartCard__ticketCount'>        
+//             <div className='cartCard__ticketDecrease' onClick={() => decreaseTicket(event.id)}> <img src="../../../src/assets/minus_small.svg" alt="Decrease ticket quantity" /></div>        
+//             <div className='cartCard__ticketQuantity'>{ticketCounts[event.id]}</div>
+//             <div className='cartCard__ticketIncrease' onClick={() => increaseTicket(event.id)}> <img src="../../../src/assets/plus_small.svg" alt="increase ticket quantity" /></div>
+//           </section>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
 
-  const decreaseTicketQuantity = () => {
-    if (ticketQuantity > 0) {
-      useStore.getState().addToCart(eventId, ticketQuantity - 1); // Uppdatera biljettantalet med Zustand
-    }
-  };
-
-  const increaseTicketQuantity = () => {
-    useStore.getState().addToCart(eventId, ticketQuantity + 1); // Uppdatera biljettantalet med Zustand
-  }
-
-  const totalPrice = event ? event.price * ticketQuantity : 0;
-
-  if (!event) {
-    return <div>Loading...</div>;
-  }
-
-  return (
-    <div className='eventpage__wrapper'>
-      <Header title="Event" />
-      <section className='event__Page'>
-        <h2>You are about to score some tickets to</h2>
-
-        <section className='eventpage__event'>
-          <article key={event.id} className='eventPage__card'>
-            <div className='eventPage__eventName'>{event.name}</div>
-            <div className='eventPage__dateTime'>{`${event.when.date} kl ${event.when.from} - ${event.when.to}`}  </div>
-            <div className='eventPage__eventPlace'>{event.where}</div>
-          </article>
-
-          <article className='event__total'>
-            <div className='event__totalPrice'>{totalPrice}</div>
-            <div className='event__ticketDecrease' onClick={decreaseTicketQuantity}> <img src="../../../src/assets/minus.svg" alt="Decrease ticket quantity" /></div>
-            <div className='event__ticketQuantity'>{ticketQuantity}</div>
-            <div className='event__ticketIncrease' onClick={increaseTicketQuantity}> <img src="../../../src/assets/plus.svg" alt="increase ticket quantity" /></div>
-          </article>
-        </section>
-
-      </section>
-      <FooterNav />
-    </div>
-  )
-}
-
-// export default EventPage;
+// export default CartObject;

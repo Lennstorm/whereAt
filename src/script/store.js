@@ -12,16 +12,32 @@ const useStore = create((set) => ({
       return { ticketCounts: newTicketCounts };
     });
   },
-    decreaseTicketQuantity: (eventId, currentCount) => {
-    set({ ticketCounts: { ...useStore.getState().ticketCounts, [eventId]: Math.max(0, currentCount - 1) } });
-    localStorage.setItem('ticketStore', JSON.stringify({ ticketCounts: useStore.getState().ticketCounts  }));    
+  decreaseTicketQuantity: (eventId, currentCount) => {
+    set((state) => {
+      const updatedCount = Math.max(0, currentCount - 1);
+      const newTicketCounts = { ...state.ticketCounts, [eventId]: updatedCount };
+      localStorage.setItem('ticketStore', JSON.stringify({ ticketCounts: newTicketCounts }));
+      return { ticketCounts: newTicketCounts };
+    });
   },
   increaseTicketQuantity: (eventId, currentCount) => {
-    set({ ticketCounts: { ...useStore.getState().ticketCounts, [eventId]: Math.max(0, currentCount + 1) } });
-    localStorage.setItem('ticketStore', JSON.stringify({ ticketCounts: useStore.getState().ticketCounts }));
+    set((state) => {
+      const updatedCount = Math.max(0, currentCount + 1);
+      const newTicketCounts = { ...state.ticketCounts, [eventId]: updatedCount };
+      localStorage.setItem('ticketStore', JSON.stringify({ ticketCounts: newTicketCounts }));
+      return { ticketCounts: newTicketCounts };
+    });
   },
   calculateTotalPrice: (event, ticketQuantity) => {
     return event ? event.price * ticketQuantity : 0;
+  },
+
+  emptyCart: () => {
+    set((state) => {
+      const newTicketCounts = {};
+      localStorage.removeItem('ticketStore');
+      return { ...state, ticketCounts: newTicketCounts }; // Återanvänder den befintliga state och ersätter ticketCounts
+    });
   },
 }));
 
