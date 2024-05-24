@@ -6,6 +6,12 @@
 
 .cartObject__errMsg {
     display: flex;
+    justify-content: center;
+    color: var(--color-creamy-pink);
+    font-family: var(--font-fira-sans);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .cart__card-wrapper {

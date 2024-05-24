@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
 import './ticketObject.css';
+import { fetchEventTickets } from '../../script/tickets';
 
 function TicketObject({ events }) {
   const [tickets, setTickets] = useState([]);
-  
+
   const generateTicketValues = () => {
     const tickId = '#' + Math.random().toString(36).substring(2, 8).toUpperCase();
     const sectionId = String.fromCharCode(65 + Math.floor(Math.random() * 26));
@@ -12,29 +13,39 @@ function TicketObject({ events }) {
   };
 
   useEffect(() => {
-    if (events) {
-      const generatedTickets = events.flatMap(event => {
-        return [...Array(event.ticketCount)].map(() => {
-          const { tickId, sectionId, seatNr } = generateTicketValues(); 
-          const dateParts = event.when.date.split(' ');
-          const month = dateParts[1].substring(0, 3);
-          const fullDate = `${dateParts[0]} ${month}`;
-          return {
-            tickId,
-            sectionId,
-            seatNr,
-            eventName: event.name,
-            eventWhere: event.where,
-            eventDate: fullDate, 
-            eventFrom: event.when.from,
-            eventTo: event.when.to
-          };
+    const fetchTickets = async () => {
+      try {
+        const ticketCounts = JSON.parse(localStorage.getItem('ticketCounts')) || {};
+        const events = await fetchEventTickets(ticketCounts);
+
+        const generatedTickets = events.flatMap(event => {
+          return [...Array(event.ticketCount)].map(() => {
+            const { tickId, sectionId, seatNr } = generateTicketValues();
+            const dateParts = event.when.date.split(' ');
+            const month = dateParts[1].substring(0, 3);
+            const fullDate = `${dateParts[0]} ${month}`;
+            return {
+              tickId,
+              sectionId,
+              seatNr,
+              eventName: event.name,
+              eventWhere: event.where,
+              eventDate: fullDate,
+              eventFrom: event.when.from,
+              eventTo: event.when.to
+            };
+          });
         });
-      });
-      setTickets(generatedTickets);
-    }
-  }, [events]);
-  
+
+        setTickets(generatedTickets);
+      } catch (error) {
+        console.error('Error fetching tickets', error);
+      }
+    };
+
+    fetchTickets();
+  }, []);
+
 
   return (
     <article className='ticket__wrapper'>
