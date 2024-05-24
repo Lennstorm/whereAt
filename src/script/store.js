@@ -36,12 +36,9 @@ const useStore = create((set) => ({
     set((state) => {
       const newTicketCounts = {};
       localStorage.removeItem('ticketStore');
-      return { ...state, ticketCounts: newTicketCounts }; // Återanvänder den befintliga state och ersätter ticketCounts
+      return { ...state, ticketCounts: newTicketCounts };
     });
   },
 }));
 
 export default useStore;
-
-
-

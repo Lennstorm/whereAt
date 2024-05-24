@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import './ticketObject.css';
-// import { fetchEventTickets } from '../../script/tickets';
 
-function TicketObject({ events, ticketCounts }) {
+function TicketObject({ events }) {
   const [tickets, setTickets] = useState([]);
 
   const generateTicketValues = () => {
@@ -13,7 +12,7 @@ function TicketObject({ events, ticketCounts }) {
   };
 
   useEffect(() => {
-    if (events && ticketCounts) {
+    if (events && events.length > 0) {
       const generatedTickets = events.flatMap(event => {
         return [...Array(event.ticketCount)].map(() => {
           const { tickId, sectionId, seatNr } = generateTicketValues();
@@ -35,51 +34,50 @@ function TicketObject({ events, ticketCounts }) {
 
       setTickets(generatedTickets);
     } 
-  }, [events, ticketCounts]);
+  }, [events]);
 
+  return (
+    <article className='ticket__wrapper'>
+      {tickets.map(ticket => (
+        <div key={ticket.tickId} className='ticket__card'>
+          <div className='ticket__what'>
+            <p className='ticket__header'>WHAT</p>
+            <h3 className='ticket__event-name'>{ticket.eventName}</h3>
+          </div>
 
-return (
-  <article className='ticket__wrapper'>
-    {tickets.map(ticket => (
-      <div key={ticket.tickId} className='ticket__card'>
-        <div className='ticket__what'>
-          <p className='ticket__header'>WHAT</p>
-          <h3 className='ticket__event-name'>{ticket.eventName}</h3>
+          <div className='ticket__where'>
+            <p className='ticket__header'>WHERE</p>
+            <p className='ticket__event-where'>{ticket.eventWhere}</p>
+          </div>
+
+          <div className='ticket__when'>
+            <p className='ticket__header'>WHEN</p>
+            <p className='ticket__event-date'>{ticket.eventDate}</p>
+          </div>
+
+          <div className='ticket__from'>
+            <p className='ticket__header'>FROM</p>
+            <p className='ticket__event-from'>{ticket.eventFrom}</p>
+          </div>
+
+          <div className='ticket__to'>
+            <p className='ticket__header'>TO</p>
+            <p className='ticket__event-to'>{ticket.eventTo}</p>
+          </div>
+
+          <div className='ticket__info'>
+            <p className='ticket__header'>INFO</p>
+            <p className='ticket__info-seat'>{`Section ${ticket.sectionId} - seat ${ticket.seatNr}`}</p>
+          </div>
+
+          <div className='ticket__id-bar'>
+            <p className='ticket__id-code'>{ticket.tickId}</p>
+            <p className='ticket__id-text'>{ticket.tickId}</p>
+          </div>
         </div>
-
-        <div className='ticket__where'>
-          <p className='ticket__header'>WHERE</p>
-          <p className='ticket__event-where'>{ticket.eventWhere}</p>
-        </div>
-
-        <div className='ticket__when'>
-          <p className='ticket__header'>WHEN</p>
-          <p className='ticket__event-date'>{ticket.eventDate}</p>
-        </div>
-
-        <div className='ticket__from'>
-          <p className='ticket__header'>FROM</p>
-          <p className='ticket__event-from'>{ticket.eventFrom}</p>
-        </div>
-
-        <div className='ticket__to'>
-          <p className='ticket__header'>TO</p>
-          <p className='ticket__event-to'>{ticket.eventTo}</p>
-        </div>
-
-        <div className='ticket__info'>
-          <p className='ticket__header'>INFO</p>
-          <p className='ticket__info-seat'>{`Section ${ticket.sectionId} - seat ${ticket.seatNr}`}</p>
-        </div>
-
-        <div className='ticket__id-bar'>
-          <p className='ticket__id-code'>{ticket.tickId}</p>
-          <p className='ticket__id-text'>{ticket.tickId}</p>
-        </div>
-      </div>
-    ))}
-  </article>
-);
+      ))}
+    </article>
+  );
 }
 
 export default TicketObject;

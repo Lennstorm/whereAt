@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 import { fetchEvents } from '../../script/api';
 import useStore from '../../script/store';
-import '../cartObject/cartObject.css';
+import './cartObject.css';
 
-function CartObject({ events: propsEvents }) { 
+function CartObject() { 
   const [events, setEvents] = useState([]);  
-  const { decreaseTicketQuantity, increaseTicketQuantity } = useStore(); // Hämta funktioner från store  
+  const { decreaseTicketQuantity, increaseTicketQuantity } = useStore(); 
   const ticketCounts = useStore(state => state.ticketCounts);
 
   useEffect(() => {
     const getEventData = async () => {
       try {
         const eventsData = await fetchEvents();        
-        setEvents(eventsData.events);
+        setEvents(eventsData);
       } catch (error) {
-        console.error('Errorr fetchning event data', error);        
+        console.error('Error fetching event data', error);        
       }
     };
             

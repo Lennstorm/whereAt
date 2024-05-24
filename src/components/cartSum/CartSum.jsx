@@ -1,26 +1,30 @@
 import { useEffect, useState } from 'react';
 import { fetchEvents } from '../../script/api';
 import useStore from '../../script/store';
-import './cartSum.css'
+import './cartSum.css';
 
 function CartSum() {
   const [totalPrice, setTotalPrice] = useState(0);
-  const [events, setEvents] = useState([]);  
+  const [events, setEvents] = useState([]);
   const ticketCounts = useStore(state => state.ticketCounts);
+  useEffect(() => {
+    const getEventData = async () => {
+      try {
+        const eventsData = await fetchEvents();
+        setEvents(eventsData);
+      } catch (error) {
+        console.error('Error fetching event data', error);
+      }
+    };
 
+    getEventData();
+
+  }, []);
   useEffect(() => {
     const calculateTotalPrice = (event, ticketQuantity) => {
       return event ? event.price * ticketQuantity : 0;
     };
 
-    const getEventData = async () => {
-      try {
-        const eventsData = await fetchEvents();        
-        setEvents(eventsData.events);
-      } catch (error) {
-        console.error('Error fetching event data', error);        
-      }
-    };
 
     const updateTotalPrice = () => {
       let sum = 0;
@@ -31,7 +35,6 @@ function CartSum() {
       setTotalPrice(sum);
     };
 
-    getEventData();
     
     if (events.length > 0) {
       updateTotalPrice();
