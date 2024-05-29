@@ -56,7 +56,7 @@ function EventPage() {
             <div className='event__ticketIncrease' onClick={increaseTicket}> <img src="../../../src/assets/plus.svg" alt="increase ticket quantity" /></div>
           </article>
         </section>
-        <Button to="/cart" text="Till varukorgen" />
+        <Button to="/cart" className={'greenBtn'} text="Till varukorgen" />
       </section>
       <FooterNav />
     </div>

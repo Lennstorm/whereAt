@@ -18,7 +18,8 @@ export async function fetchEventTickets(ticketCounts) {
       }));
 
       return combinedData;
-    } else {
+    } else {      
+      console.log(combinedData)
       // Om inga biljetter finns, returnera en tom array
       return [];
     }

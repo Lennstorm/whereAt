@@ -5,8 +5,14 @@
   src: url('src/assets/fonts/SansitaOne.ttf') format('truetype'); 
 }
 
+
 .app {
   width: 375px;
   height: 667px;
+  overflow: hidden;
+  margin: 0 auto; 
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 

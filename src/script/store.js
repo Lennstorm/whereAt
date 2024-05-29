@@ -2,7 +2,6 @@ import { create } from 'zustand';
 
 const savedData = JSON.parse(localStorage.getItem('ticketStore'));
 
-
 const useStore = create((set) => ({
   ticketCounts: savedData ? savedData.ticketCounts : {},
   addToCart: (eventId, count) => {
@@ -31,11 +30,12 @@ const useStore = create((set) => ({
   calculateTotalPrice: (event, ticketQuantity) => {
     return event ? event.price * ticketQuantity : 0;
   },
-
   emptyCart: () => {
     set((state) => {
-      const newTicketCounts = {};
-      localStorage.removeItem('ticketStore');
+      const newTicketCounts = {};      
+      const updatedTicketStore = JSON.parse(localStorage.getItem('ticketStore')) || {};
+      updatedTicketStore.ticketCounts = {};
+      localStorage.setItem('ticketStore', JSON.stringify(updatedTicketStore));
       return { ...state, ticketCounts: newTicketCounts };
     });
   },

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import useTicketStore from '../../script/ticketStore';
 import { useNavigate } from 'react-router-dom';
 import './cartPage.css';
 import Header from '../../components/header/Header';
@@ -12,8 +13,9 @@ import { fetchEventTickets } from '../../script/tickets';
 function CartPage() {
   const [events, setEvents] = useState([]);
   const [dataFetched, setDataFetched] = useState(false);
-  const generateTicksEmptyCart = useStore(state => state.emptyCart);
+  const emptyCart = useStore(state => state.emptyCart); 
   const ticketCounts = useStore(state => state.ticketCounts);
+  const setEventTickets = useTicketStore(state => state.setEventTickets);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,9 +35,11 @@ function CartPage() {
     }
   };
 
-  const handleOrderClick = () => {
-    generateTicksEmptyCart();
-    navigate('/tickets');
+  const handleOrderClick = async () => {    
+    const tickets = await fetchEventTickets(ticketCounts);    
+    setEventTickets(tickets);
+    emptyCart();     
+    navigate('/tickets');    
   };
 
   return (
@@ -44,7 +48,7 @@ function CartPage() {
       <section className='cartPage__objects'>
         <CartObject events={events} />
         <CartSum />
-        <Button text="Skicka order" onClick={handleOrderClick}/>
+        <Button className='greenBtn cartBtn' text="Skicka order" onClick={handleOrderClick} />
       </section>
       <FooterNav />
     </div>

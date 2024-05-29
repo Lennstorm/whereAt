@@ -1,14 +1,19 @@
 .cartpage__wrapper {
-    position: absolute;
-    top: 0;
-    width: 375px;
-    height: 667px;
-    height: 100%;
+    position: relative;
+    top: 0;    
+    height: 100%;    
     background-color: var(--color-background-blue);    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;    
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;  
+    
+}
+
+.cartBtn {
+    margin-bottom: 3rem;
 }
 
 .cartPage__objects {

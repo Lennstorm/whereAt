@@ -3,14 +3,24 @@
     min-width: 90%;
     overflow-y: auto;
     scrollbar-width: none;
-    -ms-overflow-style: none;        
+    -ms-overflow-style: none; 
+    padding-bottom: 6rem;       
 }
 
 .ticket__wrapper::-webkit-scrollbar{
 display: none;
 }
 
+.no-tickets {
+    display: flex;
+    justify-content: center;
+    color: var(--color-font-white);
+    font-family: var(--font-fira-sans);
+    background: none;
+    margin-top: 80%;
+    min-height: 100%;
 
+}
 
 .ticket__card {
     display: grid;

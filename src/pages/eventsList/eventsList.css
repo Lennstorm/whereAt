@@ -41,8 +41,6 @@
     color: var(--color-font-white);
 }
 
-
-
 .events__all {
     
     color: var(--color-font-white);
@@ -123,7 +121,11 @@
     color: inherit;
 }
 
-.footer {
+.cartBtn {
+    margin-bottom: 3rem;
+}
+
+.eventsList__footer {
     position:sticky;
     bottom: 0;
     z-index: 1000;

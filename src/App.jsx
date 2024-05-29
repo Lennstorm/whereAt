@@ -9,7 +9,6 @@ import EventPage from './pages/eventPage/EventPage';
 import EventsList from './pages/eventsList/EventsList';
 import { fetchEvents } from './script/api';
 
-
 function App() {
 
   const [events, setEvents] = useState([]);

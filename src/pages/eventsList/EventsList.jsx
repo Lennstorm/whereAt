@@ -42,6 +42,7 @@ function EventsList() {
   }
 
   return (
+    <>
     <div className='eventsList__Page'>
       <Header title="Events" />
 
@@ -75,9 +76,13 @@ function EventsList() {
           })
         )}
       </section>
-      <Button to="/cart" text="Till varukorgen" />
-      <FooterNav />
+      <Button to="/cart" className="greenBtn cartBtn" text="Till varukorgen" />
     </div>
+        <div className='eventsList__footer'>
+
+      <FooterNav />
+        </div>
+    </>
   );
 }
 
