@@ -9,3 +9,11 @@
   text-decoration: none;
 
 }
+
+.greenBtn:hover {
+  cursor: pointer;  
+}
+
+.greenBtn:active {
+  transform: scale(0.95);
+}

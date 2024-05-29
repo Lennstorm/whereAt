@@ -1,19 +1,19 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
-import './button.css'
+import './button.css';
 
-function Button({ to, text }) {
-  if (to) {
-    return (
-      <Link to={to} className='greenBtn'>
-        {text}
-      </Link>
-    );
-  }
+function Button({ className, to, text, onClick }) {
+  const handleClick = (event) => {
+    if (onClick) {
+      onClick();
+    }
+  };
 
   return (
-    <button className='greenBtn'>
+    <Link to={to} className={className} onClick={handleClick}>
       {text}
-    </button>
+    </Link>
   );
 }
-  export default Button;
+
+export default Button;

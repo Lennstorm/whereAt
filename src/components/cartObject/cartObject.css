@@ -6,13 +6,23 @@
 
 .cartObject__errMsg {
     display: flex;
+    justify-content: center;
+    color: var(--color-creamy-pink);
+    font-family: var(--font-fira-sans);
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.header_title {
+    min-height: 100%;
 }
 
 .cart__card-wrapper {
     min-width: 90%;
 }
 
-.cartCard {    
+.cartCard {
     border: 1px solid var(--color-creamy-pink);
     border-radius: 3px;
     margin-top: 1rem;
@@ -20,7 +30,7 @@
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: 2;
-    
+
 }
 
 .cartCard__nameDateTime {
@@ -30,18 +40,18 @@
     display: flex;
     flex-direction: column;
     padding: .6rem;
-    
+
 }
 
-.cartCard__name{
-    
+.cartCard__name {
+
     font-family: var(--font-sansita);
     font-size: 1.5rem;
     color: var(--color-creamy-pink);
 }
 
 .cartCard__dateTime {
-    
+
     font-family: var(--font-fira-sans);
     font-size: .875rem;
     color: var(--color-light-green);
@@ -53,12 +63,15 @@
     flex-direction: row;
     justify-content: space-evenly;
 }
+
 .cartCard__ticketDecrease {
-    display: flex;
-    
+    margin-top: 1%;
+    margin-bottom: auto;
+
+
 }
 
-.cartCard__ticketQuantity {    
+.cartCard__ticketQuantity {
     font-family: var(--font-fira-sans);
     font-size: 1.75rem;
     font-weight: 400;
@@ -68,9 +81,11 @@
     border-left: 1px solid var(--color-creamy-pink);
     border-right: 1px solid var(--color-creamy-pink);
     text-align: center;
-    
+
 }
 
 .cartCard__ticketIncrease {
-    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+
 }
